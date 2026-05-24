@@ -1,8 +1,7 @@
 FROM n8nio/n8n:latest
 
-# ضبط مسار التشغيل لضمان عدم وجود أخطاء صلاحيات
-ENV N8N_USER_FOLDER=/tmp
-ENV N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=false
+# ضبط المستخدم والصلاحيات
+USER node
 
-# استخدام المسار الكامل للملف التنفيذي
+# استخدام المسار الكامل للملف التنفيذي يمنع خطأ "Command not found"
 CMD ["/usr/local/bin/n8n", "start"]
