@@ -1,2 +1,4 @@
 FROM n8nio/n8n
-CMD ["n8n", "start", "--tunnel"]
+# استخدام مسار ثابت وواضح
+WORKDIR /home/node
+CMD ["n8n", "start"]
